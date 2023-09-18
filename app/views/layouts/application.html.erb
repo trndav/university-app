@@ -11,22 +11,49 @@
   </head>
 
   <body>
-
-  <nav>
-    <div class="container">
-      <div class="nav-wrapper">      
-        <%= link_to "Uni Tech", root_path, class: "brand-logo right" %>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "New Course", courses_new_path %></li>
-          <li><%= link_to "About", about_path %></li>
-        </ul>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav-wrapper">      
+            <%= link_to "Uni Tech", root_path, class: "brand-logo right" %>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "New Course", courses_new_path %></li>
+              <li><%= link_to "About", about_path %></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <%= yield %>
       </div>
-    </div>
-  </nav>
+    </main>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Uni Tech</h5>
+            <p class="grey-text text-lighten-4">Live and learn.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "New Course", courses_new_path %></li>
+              <li><%= link_to "About", about_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2023 Copyleft by University Tech App
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
