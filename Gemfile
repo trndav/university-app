@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.8"
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem "sassc"
+gem "jquery-rails"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
