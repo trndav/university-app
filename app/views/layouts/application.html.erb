@@ -5,66 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    
+    <%= javascript_importmap_tags %>    
   </head>
-
-  <body>
-    <header>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-        <nav>
-          <div class="container">
-            <div class="nav-wrapper">      
-              <%= link_to "Uni Tech", root_path, class: "brand-logo right" %>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "New Course", courses_new_path %></li>
-                <li><%= link_to "About", about_path %></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>              
-              </ul>
-            </div>
-          </div>
-        </nav>
-    </header>
+  <body>    
+    <%= render "layouts/navigation" %>
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Uni Tech</h5>
-            <p class="grey-text text-lighten-4">Live and learn.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "New Course", courses_new_path %></li>
-              <li><%= link_to "About", about_path %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2023 Copyleft by University Tech App
-        </div>
-      </div>
-    </footer>
-
+    <%= render "layouts/footer" %>
   </body>
 </html>
