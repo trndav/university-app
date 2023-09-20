@@ -4,4 +4,3 @@ import "jquery"
 import "@hotwired/turbo-rails"
 import "controllers"
 import "require materialize"
-
