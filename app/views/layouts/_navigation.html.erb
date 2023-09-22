@@ -13,8 +13,11 @@
                 <li><%= link_to "Home", root_path %></li>
                 <li><%= link_to "New Course", courses_new_path %></li>
                 <li><%= link_to "Students", students_path %></li>
-                <li><%= link_to "Sign up", new_student_path %></li>
-                <li><%= link_to "Log in", login_path %></li>
+                <li><%= link_to "Sign up", new_student_path %></li>                
+                
+                # Code in application_helper
+                <li><%= session_link %></li>                
+
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>              
               </ul>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get "courses/new", to: "courses#new"
   get "about", to: "pages#about"
   resources :students, except: [:destroy]
+
+  # workaround - not best practice, should be delete "logout"..
+  get "logout", to: "logins#destroy"
   get "login", to: "logins#new"
-  post "login", to: "logins#create"
-  delete "logout", to: "logins#destroy"
+  post "login", to: "logins#create" 
 end
