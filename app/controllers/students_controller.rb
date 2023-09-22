@@ -1,4 +1,9 @@
 class StudentsController < ApplicationController
+    skip_before_action :require_user, only: [:new, :create]
+
+    # restrict controllers like edit for users that are not logged user
+    before_action :require_same_student, only: [:edit, :update] 
+
     before_action :set_student, only: [:show, :edit, :update]
 
     def index
@@ -43,5 +48,12 @@ class StudentsController < ApplicationController
 
     def set_student
         @student = Student.find(params[:id])
+    end
+
+    def require_same_student
+        if current_user != @student
+            flash[:notice] = "You can only edit your profile"
+            redirect_to student_path(current_user)
+        end
     end
 end
