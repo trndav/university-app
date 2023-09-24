@@ -1,24 +1,14 @@
-# README
+# University App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+University App tracks students/users and courses they are enrolled in.
+This Ruby on Rails 7 project have 3 database tables: students, courses, student_courses.
 
-Things you may want to cover:
+* MaterializeCSS, navbar, sticky footer, dropdown, hamburger menu
+* Bcrypt authentication
+* Enroll course functionality
+* Edit profile functionality
+* Flash messages/notices/errors on various actions
+* DRYed code
+* User session management
+* Added restricted actions
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
