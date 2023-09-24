@@ -10,4 +10,11 @@ Rails.application.routes.draw do
   get "logout", to: "logins#destroy"
   get "login", to: "logins#new"
   post "login", to: "logins#create" 
+
+  # Route-path for student enroll course
+  # Changed post to get, bc post did not return page
+  get "course_enroll", to: "student_courses#create"
+
+  # Trying, link to courses in students view do not work. This requires show in courses_controller.
+  resources :courses
 end

@@ -4,7 +4,18 @@
             <div class="card-content white-text">
                 <span class="card-title">Name: <%= @student.name %></span>
                 <p>Email: <%= @student.email %></p>
-                <p>Course Enrollments: None</p>
+                <p><strong>Course Enrollments: </strong></p>
+                <% if @student.courses.empty? %>
+                  None
+                  <% else %>
+                    <ul>
+                      <% @student.courses.each do |course| %>                 
+                        <p><strong><%= course.name %></strong></p>
+                        <p><%= course.description %></p>
+                        <br>
+                      <% end %>
+                    </ul>
+                  <% end %>
             </div>
         </div>
         <% if current_user == @student %>

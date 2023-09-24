@@ -1,10 +1,11 @@
 class StudentsController < ApplicationController
     skip_before_action :require_user, only: [:new, :create]
+    
+    # Must be before require_same_student
+    before_action :set_student, only: [:show, :edit, :update]
 
     # restrict controllers like edit for users that are not logged user
-    before_action :require_same_student, only: [:edit, :update] 
-
-    before_action :set_student, only: [:show, :edit, :update]
+    before_action :require_same_student, only: [:edit, :update]     
 
     def index
         @students = Student.all
@@ -25,7 +26,7 @@ class StudentsController < ApplicationController
         end
     end
 
-    def show
+    def show        
     end
 
     def edit
@@ -51,8 +52,9 @@ class StudentsController < ApplicationController
     end
 
     def require_same_student
+
         if current_user != @student
-            flash[:notice] = "You can only edit your profile"
+            flash[:notice] = "You can only edit your profile. user: #{current_user.inspect}, student: #{@student.inspect}"
             redirect_to student_path(current_user)
         end
     end
