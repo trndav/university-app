@@ -1,10 +1,4 @@
 <header>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
         <nav>
           <div class="container">
             <div class="nav-wrapper">      
@@ -16,12 +10,11 @@
                 <% if !logged_in? %>
                   <li><%= link_to "Sign up", new_student_path %></li>                                                               
                 <% end %>
-
                 <% # Code in application_helper %>
-                <li><%= session_link %></li>                                
+                <li><%= session_link %></li> 
 
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">About us<i class="material-icons right">arrow_drop_down</i></a></li>              
+                
+                
                 <% if logged_in? %>
                   <li>User: <%= current_user.name %></li>
                 <% end %>
@@ -29,6 +22,7 @@
             </div>
           </div>
         </nav>
+
         <% flash.each do |key, message| %>
           <div class="container">
             <div class="row sign-up-form">
